@@ -10,14 +10,25 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ngTraining-testing!');
+    expect(page.getTitleText()).toEqual('Testing!');
+  });
+
+  it('should have initial order value of 0', () => {
+  });
+
+  it('should have the order-value of 10 after a first increment', () => {
   });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
+    const logs = await browser
+      .manage()
+      .logs()
+      .get(logging.Type.BROWSER);
+    expect(logs).not.toContain(
+      jasmine.objectContaining({
+        level: logging.Level.SEVERE
+      } as logging.Entry)
+    );
   });
 });

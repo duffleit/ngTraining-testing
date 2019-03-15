@@ -1,27 +1,47 @@
-# NgTrainingTesting
+# Testing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+This exercise shows you how test crate propper tests for your angular application.
 
-## Development server
+_This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5._
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tasks
 
-## Code scaffolding
+1. Update the `karma.config.js` of the project to run the tests with `Headless Chrome` to set the browsers config-property to `['ChromeHeadless']`. In addition, use the `krama-spec-reporter` instead of the default `progress`-reporter and configure it:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+    plugins: [
+      ...
+      require('karma-spec-reporter'),
+      ...
+    ],
+    specReporter: {
+      suppressSkipped: true,
+      showSpecTiming: true,
+      failFast: false
+    },
+    ...
+    reporters: ['spec', 'kjhtml'],
+```
 
-## Build
+2. Add a `test:repl` and a `test:coverage` to your project, which runs the tests in watch mode or generates a coverage-report.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+scripts: {
+    "test:repl": "ng test --watch",
+    "test:coverage": "ng test --code-coverage",
+}
+```
 
-## Running unit tests
+3. Implement the empty specs in `0_pipe`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Implement the empty specs in `1_service`.
 
-## Running end-to-end tests
+5. Implement the empty specs in `2_simple-component`.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+6. Implement the empty specs in `3_complex-component`.
 
-## Further help
+7. Install `jasmine-marbles` and imlement the missing specs in `4_rxjs_marble`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+8. Use the marble syntax to delay the mocked HTTP-request in `_complex-component`.
+
+9. Finalize the missing specs in `e2e`.
