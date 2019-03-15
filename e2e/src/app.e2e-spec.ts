@@ -14,9 +14,14 @@ describe('workspace-project App', () => {
   });
 
   it('should have initial order value of 0', () => {
+    page.navigateTo();
+    expect(page.getOrderValue()).toEqual('0');
   });
 
   it('should have the order-value of 10 after a first increment', () => {
+    page.navigateTo();
+    page.clickOnIncrement();
+    expect(page.getOrderValue()).toEqual('10');
   });
 
   afterEach(async () => {
