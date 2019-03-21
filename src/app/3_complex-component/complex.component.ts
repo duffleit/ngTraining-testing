@@ -7,8 +7,8 @@ import { OrderService } from './order.service';
     <h1>Tickets</h1>
     <p><input id="order-value" [(ngModel)]="value" disabled /></p>
     <p>
-      <app-button (buttonClicked)="increment()" id="#increment-btn">increment</app-button>
-      <app-button (buttonClicked)="decrement()" id="#decrement-btn">decrement</app-button>
+      <app-button (buttonClicked)="increment()" id="increment-btn">increment</app-button>
+      <app-button (buttonClicked)="decrement()" id="decrement-btn">decrement</app-button>
     </p>
     <p>
       <app-button (buttonClicked)="order()" id="order-btn">order</app-button>
@@ -22,7 +22,7 @@ import { OrderService } from './order.service';
   `
 })
 export class ComplexComponent {
-  @Input() step = 5;
+  @Input() step = 1;
   @Input() min = 0;
   @Input() max = 100;
 

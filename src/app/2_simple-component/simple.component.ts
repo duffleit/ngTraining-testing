@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-simple',
   template: `
-    <p>Hi, {{ name }}</p>
+    <p id="greeting">Hi, {{ name }}</p>
+    <p>Das ist p2</p>
     <p><button (click)="reset()"></button></p>
   `
 })
